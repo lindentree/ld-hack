@@ -1,11 +1,17 @@
 "use client";
 
-import { MdOutlineArrowCircleRight } from "react-icons/md";
+import { GiDiceSixFacesOne } from "react-icons/gi";
+import { GiDiceSixFacesTwo } from "react-icons/gi";
 import { useState } from "react";
 import styles from "./page.module.css";
+import info from "./components/info";
 
 export default function Home() {
+  const [initialPromtp, SetInitialPromtp] = useState(
+    "You are at Devcon hackathon, it suddenly becomes dark, the doors are locked, and someone just turned into a zombie, what do you do next:"
+  );
   const [inputValue, setInputValue] = useState("");
+  const [rules, setRules] = useState(0);
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -22,18 +28,25 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.navbar}>
-        <h1 className={styles.title}>Adventure Game</h1>
+        <h1 className={styles.title}>DailyDarkly</h1>
+        <button className={styles.help}>How to play</button>
       </div>
-      <div className={styles.description}>
+
+      <div className={styles.text}>
+        <h2>{initialPromtp}</h2>
+        <br />
+      </div>
+
+      <div className={styles.userInput}>
         <form className={styles.form} onSubmit={handleSubmit}>
-          <textarea
-            type="text"
-            value={inputValue}
-            onChange={handleInputChange}
-            placeholder="Enter your adventure command..."
-            className={styles.input}
-          />
-          <MdOutlineArrowCircleRight type="submit" className={styles.button} />
+          <p className={styles.prompt}>
+            Option 1: Do you carefully inspect the painting on the wall
+          </p>
+          <GiDiceSixFacesOne className={styles.option1} />
+          <GiDiceSixFacesTwo className={styles.option2} />
+          <p className={styles.prompt}>
+            Option 2: check the drawers of the desk?
+          </p>
         </form>
       </div>
     </main>
