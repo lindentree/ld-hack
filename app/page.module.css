@@ -1,0 +1,41 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 6rem;
+  min-height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  border-bottom: 1px solid white;
+}
+
+.title {
+  display: inline;
+  margin-bottom: 0;
+  text-align: l;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.input {
+  display: flex;
+  width: 100%;
+  font-size: 1.4rem;
+  padding: 1rem;
+  border: 3px solid whitesmoke;
+  border-radius: 30px;
+  color: white;
+  outline: none;
+}
+
+.button {
+  margin: 10px;
+  font-size: 30px;
+}
