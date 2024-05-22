@@ -7,8 +7,9 @@ import styles from "./page.module.css";
 import info from "./components/info";
 
 export default function Home() {
-  const [initialPromtp, SetInitialPromtp] = useState(
-    "You are at Devcon hackathon, it suddenly becomes dark, the doors are locked, and someone just turned into a zombie, what do you do next:"
+  const [initialPrompt, SetInitialPrompt] = useState(
+    `You find yourself in a dimly lit, cramped server room. The air is thick with the smell of old computers and stale coffee. In front of you, a bank of ancient computers hums and whirs, their screens flickering with lines of code. A piece of paper on the floor catches your eye - it reads 'Meet me at the hackathon registration desk at 9am. Come alone.' The room is otherwise empty, 
+    except for a small table in the corner with a laptop and a note that reads 'Use me'.`
   );
   const [inputValue, setInputValue] = useState("");
   const [rules, setRules] = useState(0);
@@ -33,7 +34,7 @@ export default function Home() {
       </div>
 
       <div className={styles.text}>
-        <h2>{initialPromtp}</h2>
+        <h2>{initialPrompt}</h2>
         <br />
       </div>
 

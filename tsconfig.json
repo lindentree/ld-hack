@@ -1,5 +1,9 @@
 {
-  "include": ["./src/**/*", "../amazon-bedrock/generatePuzzle.ts"], // Add a file or directory path to include
+  "include": [
+    "./src/**/*",
+    "../amazon-bedrock/generatePuzzle.ts",
+    ".next/types/**/*.ts"
+  ], // Add a file or directory path to include
   /* This TypeScript project config describes the environment that
    * Convex functions run in and is used to typecheck them.
    * You can modify it, but some settings required to use Convex.
@@ -9,18 +13,29 @@
     "allowJs": true,
     "strict": true,
     "esModuleInterop": true,
-
-
     /* These compiler options are required by Convex */
     "target": "ESNext",
-    "lib": ["ES2021", "dom"],
+    "lib": [
+      "ES2021",
+      "dom"
+    ],
     "forceConsistentCasingInFileNames": true,
     "allowSyntheticDefaultImports": true,
     "module": "ESNext",
     "moduleResolution": "Node",
     "isolatedModules": true,
     "skipLibCheck": true,
-    "noEmit": true
+    "noEmit": true,
+    "incremental": true,
+    "resolveJsonModule": true,
+    "jsx": "preserve",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
-  "exclude": ["./_generated"]
+  "exclude": [
+    "./_generated"
+  ]
 }
