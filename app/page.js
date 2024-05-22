@@ -39,6 +39,30 @@ export default function Home() {
     }
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (showRules) {
+      return;
+    }
+
+    // Handle the form submission event
+    const formData = new FormData(e.target);
+    const option1 = formData.get("option1");
+    const option2 = formData.get("option2");
+
+    if (option1 === "on") {
+      setInitialPrompt("You run towards the exit, but it is locked");
+      setChoiceOne("Run through the window");
+      setChoiceTwo("Find a place to hide");
+    } else {
+      setInitialPrompt(
+        "You find a can of cold Sprite, meanwhile 3 others have turned into zombies"
+      );
+      setChoiceOne("Keep searching for tools");
+      setChoiceTwo("Drink Sprite");
+    }
+  }
+
   return (
     <main className={styles.main}>
       <div className={styles.navbar}>
