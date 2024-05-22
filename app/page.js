@@ -11,26 +11,41 @@ export default function Home() {
     `You find yourself in a dimly lit, cramped server room. The air is thick with the smell of old computers and stale coffee. In front of you, a bank of ancient computers hums and whirs, their screens flickering with lines of code. A piece of paper on the floor catches your eye - it reads 'Meet me at the hackathon registration desk at 9am. Come alone.' The room is otherwise empty, 
     except for a small table in the corner with a laptop and a note that reads 'Use me'.`
   );
-  const [inputValue, setInputValue] = useState("");
-  const [rules, setRules] = useState(0);
+  const [choiceOne, setChoiceOne] = useState("Run towards the exit");
+  const [choiceTwo, setChoiceTwo] = useState("look for tools");
+  const [showRules, setShowRules] = useState("Rules");
 
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
+  const toggleRules = () => {
+    setShowRules(!showRules);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Add your logic here for handling the input value, like calling the Gen AI API
-    console.log("Input value:", inputValue);
-    // Reset input value
-    setInputValue("");
+  const handleOptionOneClick = () => {
+    if (showRules) {
+      // Handle the click event for option 1 in the "RULES" section
+      setInitialPrompt("You check all the exit doors and all are locked");
+      setChoiceOne("Run through the window");
+      setChoiceTwo("Find a place to hide");
+    }
+  };
+
+  const handleOptionTwoClick = () => {
+    if (showRules) {
+      // Handle the click event for option 2 in the "RULES" section
+      setInitialPrompt(
+        "You find a can of cold Sprite, meanwhile 3 others have turned into zombies"
+      );
+      setChoiceOne("Keep searching for tools");
+      setChoiceTwo("Drink Sprite");
+    }
   };
 
   return (
     <main className={styles.main}>
       <div className={styles.navbar}>
         <h1 className={styles.title}>DailyDarkly</h1>
-        <button className={styles.help}>How to play</button>
+        <button className={styles.help} onClick={toggleRules}>
+          {showRules ? "How to play" : "Go back to Game"}
+        </button>
       </div>
 
       <div className={styles.text}>
