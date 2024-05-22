@@ -30,11 +30,9 @@ export default function Home() {
   const handleOptionTwoClick = () => {
     if (showRules) {
       // Handle the click event for option 2 in the "RULES" section
-      setInitialPrompt(
-        "You find a can of cold Sprite, meanwhile 3 others have turned into zombies"
-      );
-      setChoiceOne("Keep searching for tools");
-      setChoiceTwo("Drink Sprite");
+      setInitialPrompt("You Win!!");
+      setChoiceOne("Play again.");
+      setChoiceTwo("Exit.");
     }
   };
 
