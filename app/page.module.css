@@ -6,8 +6,10 @@
   min-height: 100vh;
 }
 
+/*Nav Section*/
 .navbar {
   display: flex;
+  justify-content: space-between;
   border-bottom: 1px solid white;
 }
 
@@ -17,6 +19,26 @@
   text-align: l;
 }
 
+.help {
+  background-color: black;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  padding: 4px;
+  margin-bottom: 2px;
+  opacity: 50%;
+}
+
+.help:hover {
+  opacity: 100%;
+}
+
+/*Text Section*/
+.prompt {
+  border: 2px solid white;
+  padding: 6px;
+}
+
+/*Input Section*/
 .form {
   display: flex;
   justify-content: center;
