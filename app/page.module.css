@@ -46,18 +46,32 @@
   margin: 10px;
 }
 
-.input {
-  display: flex;
-  width: 100%;
-  font-size: 1.4rem;
-  padding: 1rem;
-  border: 3px solid whitesmoke;
-  border-radius: 30px;
-  color: white;
-  outline: none;
+.optionContainer {
+  margin-top: 20px;
 }
 
-.button {
-  margin: 10px;
-  font-size: 30px;
+.option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.prompt {
+  margin: 0;
+  margin-right: 10px;
+}
+
+.option1,
+.option2 {
+  width: 30px;
+  height: 30px;
+  margin-left: auto;
+  font-size: larger;
+}
+
+.option1:hover,
+.option2:hover {
+  color: red;
 }
